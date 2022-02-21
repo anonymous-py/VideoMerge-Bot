@@ -27,14 +27,6 @@ async def UploadVideo(bot: Client, cb: CallbackQuery, merged_vid_path: str, widt
                     "Uploading Video ...",
                     cb.message,
                     c_time
-                ),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005")],
-                        [InlineKeyboardButton("Support Group", url="https://t.me/linux_repo"),
-                         InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")]
-                    ]
-                )
             )
         else:
             c_time = time.time()
@@ -48,14 +40,6 @@ async def UploadVideo(bot: Client, cb: CallbackQuery, merged_vid_path: str, widt
                     "Uploading Video ...",
                     cb.message,
                     c_time
-                ),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005")],
-                        [InlineKeyboardButton("Support Group", url="https://t.me/linux_repo"),
-                         InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")]
-                    ]
-                )
             )
         await asyncio.sleep(Config.TIME_GAP)
         forward_ = await sent_.forward(chat_id=Config.LOG_CHANNEL)
