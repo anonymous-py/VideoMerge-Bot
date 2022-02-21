@@ -28,7 +28,11 @@ async def UploadVideo(bot: Client, cb: CallbackQuery, merged_vid_path: str, widt
                     cb.message,
                     c_time
                 ),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005")],
                 )
+            )
         else:
             c_time = time.time()
             sent_ = await bot.send_document(
@@ -41,6 +45,11 @@ async def UploadVideo(bot: Client, cb: CallbackQuery, merged_vid_path: str, widt
                     "Uploading Video ...",
                     cb.message,
                     c_time
+                ),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [InlineKeyboardButton("Developer - @AbirHasan2005", url="https://t.me/AbirHasan2005")],
+                )
             )
         await asyncio.sleep(Config.TIME_GAP)
         forward_ = await sent_.forward(chat_id=Config.LOG_CHANNEL)
