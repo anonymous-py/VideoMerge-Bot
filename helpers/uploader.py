@@ -27,7 +27,8 @@ async def UploadVideo(bot: Client, cb: CallbackQuery, merged_vid_path: str, widt
                     "Uploading Video ...",
                     cb.message,
                     c_time
-            )
+                ),
+                )
         else:
             c_time = time.time()
             sent_ = await bot.send_document(
