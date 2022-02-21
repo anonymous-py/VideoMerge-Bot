@@ -21,7 +21,7 @@ async def ForceSub(bot: Client, cmd: Message):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.from_user.id,
-                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Sorry Sir, You are Banned to use me.",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -29,24 +29,13 @@ async def ForceSub(bot: Client, cmd: Message):
     except UserNotParticipant:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
-                    ],
-                    [
-                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshFsub")
-                    ]
-                ]
-            ),
-            parse_mode="markdown"
+            text="**Unauthorized User!**",
         )
         return 400
     except Exception:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+            text="Something went Wrong.",
             parse_mode="markdown",
             disable_web_page_preview=True
         )
